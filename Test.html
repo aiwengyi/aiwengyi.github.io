@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <link rel="stylesheet" href="css/ww.css">
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+
+  <style type="text/css">
+    .box {
+      width: 300px; 
+      background-color: rgb(28, 234, 155); 
+      border-radius: 20px; 
+      padding: 20px;
+      margin: 10px;
+      text-align: center;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <div class="">
+    <div class="box">
+      <p>今天是和宝贝恋爱的第 <span style="color: rgb(255, 196, 0); font-weight: bold;" id="love_day"></span> 天</p>
+
+      <p>今天是和翁宝见面的第 <span style="color: rgb(230, 0, 255); font-weight: bold;" id="meet_day"></span> 天</p>
+
+    </div>
+  </div>
+</body>
+<script>
+  var loveDay = new Date(2020, 4, 23);
+  var meetDay = new Date(2020, 5, 30);
+
+  var loveDuration = getDurationDay(loveDay);
+  var meetDuration = getDurationDay(meetDay);
+
+  $('#love_day').text(loveDuration);
+  $('#meet_day').text(meetDuration);
+
+  console.info("meet : " + meetDuration + ", love: " + loveDuration);
+
+  function getDurationDay(desDate) {
+    var days = (Date.now() - desDate.getTime()) / (1 * 24 * 60 * 60 * 1000);
+    return parseInt(days);
+  }
+
+
+</script>
+
+</html>
